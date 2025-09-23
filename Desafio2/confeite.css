@@ -1,0 +1,322 @@
+
+/* =========================
+   PALETA DE CORES
+========================= */
+:root {
+    --color1: #ccb24c;   /* Dourado */
+    --color2: #f7d683;   /* Amarelo claro */
+    --color3: #fffdc0;   /* Creme */
+    --color4: #fffffd;   /* Branco quase puro */
+    --color5: #457d97;   /* Azul */
+}
+
+/* =========================
+   IMPORTAÇÃO DE FONTES
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+/* =========================
+   FONTE MACONDO
+========================= */
+.macondo-regular {
+    font-family: "Macondo", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* =========================
+   ESTILO GLOBAL
+========================= */
+body {
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color3);
+    font-family: "Macondo", cursive;
+}
+
+/* =========================
+   MENU E NAVEGAÇÃO
+========================= */
+.menu-barra {
+    display: flex;
+    align-items: center;
+     background-color: var(--color1);
+    width: 100vw;         
+    min-width: 100%; 
+    height: auto;
+}
+.cute-img {
+    width: 100px;
+    height: auto;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+@media (max-width: 800px) {
+    .cute-img {
+        width: 150px;
+        margin-right: 2px;
+    }
+}
+.navegacao {
+    background-color: var(--color1);
+    
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Macondo", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.navegacao a {
+    color: #641e1e;
+    transition: color 0.3s, font-size 0.3s, text-shadow 0.3s;
+}
+.navegacao a:hover {
+    color: var(--color5);
+    font-size: 1.3em;
+    text-shadow: 0 4px 10px #87bedf;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+h1 {
+    font-family: "Macondo", cursive;
+    font-size: 40px;
+    font-weight: 400;
+    color: var(--color5);
+    text-align: center;
+}
+h2 {
+    color: var(--color5);
+    text-align: center;
+    font-size: 25px;
+    font-family: "Macondo", cursive;
+}
+.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--color5);
+    text-align: center;
+}
+
+/* =========================
+   SEÇÃO INÍCIO
+========================= */
+.inicio {
+    max-width: 800px;
+    margin: 60px auto;
+    height: 800px;
+    background: var(--color4);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px var(--color2);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-emphasis: center;
+}
+
+/* =========================
+   RECEITAS DOCES E SALGADAS
+========================= */
+#receitas-doces {
+    background: #e7d3b3;
+    border-radius: 24px;
+    padding: 0px 0;
+    width: 100vw;
+    
+}
+#receitas-salgadas {
+    background: #d6bfa3;
+    border-radius: 24px 0 0 24px;
+    width: 100vw;
+    
+    padding: 32px 0;
+    box-sizing: border-box;
+}
+
+/* Blocos sempre encostados nas laterais em qualquer tela */
+.receita-esquerda {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+.receita-direita {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+}
+
+/* RECEITAS DOCES E SALGADAS EM LINHA EM TELAS GRANDES */
+@media (min-width: 1000px) {
+    #receitas-doces, #receitas-salgadas {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+    .receita-esquerda {
+        align-self: flex-start;
+        margin-left: 0;
+        margin-right: auto;
+        width: 45vw;
+        max-width: 500px;
+    }
+    .receita-direita {
+        align-self: flex-start;
+        margin-right: 0;
+        margin-left: auto;
+        width: 45vw;
+        max-width: 500px;
+    }
+}
+
+/* =========================
+   RECEITAS INDIVIDUAIS
+========================= */
+.receita-esquerda {
+    max-width: 500px;
+    margin: 32px auto 32px 0;
+    padding: 24px 18px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(69, 125, 151, 0.18);
+    background: #4e2e0e;
+    color: #fffbe6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.receita-direita {
+    max-width: 500px;
+    margin: 32px 5vw 32px auto;
+    padding: 24px 18px;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(69, 125, 151, 0.18);
+    background: #fff9c4;
+    color: #4e2e0e;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* =========================
+   CONTATO E RODAPÉ
+========================= */
+.contato {
+    width: 100vw;
+    text-align: center;
+    font-family: 'Quicksand', Arial, sans-serif;
+    color: var(--color4);
+    background-color: var(--color2);
+    padding: 10px 0 10px 0;
+    border-radius: 0;
+}
+.footer {
+    width: 100vw;
+    background: var(--color1);
+    color: var(--color4);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+/* =========================
+   BOTÃO VOLTAR AO MENU
+========================= */
+.voltar {
+    font-size: 12px;
+    color: var(--color5);
+    text-decoration: underline;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: var(--color4);
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0.7;
+}
+.voltar:hover {
+    opacity: 1;
+    color: var(--color1);
+}
+
+/* =========================
+   TABELAS
+========================= */
+table {
+    width: 80%;
+    margin: 2em auto;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--color1);
+    text-align: left;
+    background: var(--color5);
+}
+td img {
+    max-width: 100%;
+    height: auto;
+}
+td h2 {
+    margin: 0 0 0.5em 0;
+    color: var(--color5);
+}
+td p {
+    margin: 0.5em 0;
+    color: var(--color1);
+}
+
+/* =========================
+   TEXTO PADRÃO
+========================= */
+a {
+    color: #302004;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: #fffbe6;
+}
+a:hover {
+    color: #457d97;
+    text-shadow: #fff9c4;
+}
+p, ol {
+    color: #457d97;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+/* =========================
+   RESPONSIVIDADE RECEITAS
+========================= */
+@media (min-width: 1200px) {
+    #receitas-doces, #receitas-salgadas {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        align-items: flex-start;
+    }
+    .receita-esquerda, .receita-direita {
+        margin: 32px 0;
+        width: 45%;
+        max-width: 800px;
+    }
+}
+/* Importação da fonte Macondo do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+.macondo-regular {
+    font-family: "Macondo", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
