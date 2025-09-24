@@ -1,205 +1,222 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap');
 
-/* Paleta de Cores */
-:root {
-    --color1: #f5ecb7;
-    --color2: #febf97;
-    --color3: #f57576;
-    --color4: #fd0a54;
-    --color5: #23192d;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 
-/* Fonte utilitária (títulos) */
-.cormorant {
-    font-family: "Cormorant Garamond", serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-}
-
-/* Reset e estilos base */
 body {
-    
-    line-height: 1.6;
-    width: 100%;
-    height: 100%;
+    font-family: 'Cormorant Garamond', serif;
+    /* Fallback sólido */
+    background-color: #80F2DD;
+        /* Camadas: 5 nuvens (topo) + gradiente (base) */
+        background-image:
+            url('sol.svg'),
+            url('https://cdn.prod.website-files.com/68397108d6cb6ceb1b41f856/686e13fb0eb2c587189e5bc5_Union-2.svg'),
+            url('https://cdn.prod.website-files.com/68397108d6cb6ceb1b41f856/686e13fb0eb2c587189e5bc5_Union-2.svg'),
+            url('https://cdn.prod.website-files.com/68397108d6cb6ceb1b41f856/686e13fb0eb2c587189e5bc5_Union-2.svg'),
+            url('https://cdn.prod.website-files.com/68397108d6cb6ceb1b41f856/686e13fb0eb2c587189e5bc5_Union-2.svg'),
+            url('https://cdn.prod.website-files.com/68397108d6cb6ceb1b41f856/686e13fb0eb2c587189e5bc5_Union-2.svg'),
+            linear-gradient(to bottom, #11A0D9 0%, #69b5d3 50%, #cef3ec 100%);
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+        background-position:
+            10vw 1vh,  /* sol */
+            1vw 14vh,
+            82vw 10vh,
+            80vw 30vh,
+            11vw 34vh,
+            86vw 46vh,
+            top left; /* gradiente */
+        background-size:
+            20vw auto,
+            14vw auto,
+            11vw auto,
+            17vw auto,
+            12vw auto,
+            15vw auto,
+            auto; /* gradiente */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
     margin: 0;
     padding: 0;
-    background-color: var(--color1);
-    color: #333;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: "Cormorant Garamond", serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
 }
 
-/* Título principal */
-h1 {
-    font-family: "Cormorant Garamond", serif;
-    color: var(--color1);
-    font-size: 28px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    text-align: center;
-    
+/* Distribuição melhor em telas grandes */
+@media (min-width: 1200px) {
+    body {
+        background-position:
+            10vw 1vh,              /* sol */
+            6vw 16vh,              /* nuvem 1 */
+            88vw 12vh,             /* nuvem 2 */
+            60vw 26vh,             /* nuvem 3 (mais ao lado do card) */
+            18vw 42vh,             /* nuvem 4 */
+            88vw 58vh,             /* nuvem 5 */
+            top left;              /* gradiente */
+        background-size:
+            clamp(160px, 18vw, 340px) auto, /* sol */
+            clamp(120px, 13vw, 260px) auto,
+            clamp(100px, 11vw, 220px) auto,
+            clamp(140px, 15vw, 280px) auto,
+            clamp(110px, 12vw, 240px) auto,
+            clamp(120px, 13vw, 260px) auto,
+            auto; /* gradiente */
+    }
 }
+
+/* Refinar ainda mais para telas extra largas */
+@media (min-width: 1600px) {
+    body {
+        background-position:
+            17vw -2vh,
+            5vw 18vh,
+            90vw 14vh,
+            62vw 28vh,
+            20vw 46vh,
+            90vw 50vh,
+            top left;
+        background-size:
+            clamp(200px, 16vw, 380px) auto,
+            clamp(140px, 12vw, 300px) auto,
+            clamp(120px, 10vw, 260px) auto,
+            clamp(160px, 13vw, 320px) auto,
+            clamp(140px, 11vw, 300px) auto,
+            clamp(150px, 12vw, 320px) auto,
+            auto;
+    }
+}
+
 
 header {
-    margin-bottom: 20px;
     text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    background-color: var(--color3);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-
+    padding: 20px 0;
+    color: #fff;
+    background: transparent;
+   
 }
+
+.nuvem {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px;
+    opacity: 0.7;
+    z-index: -1; /* Coloca a imagem atrás do texto */
+}
+
+h1 {
+    margin: 0;
+    font-size: 50px;
+    background: rgba(255, 255, 255, 0.137); /* fundo branco translúcido */
+    backdrop-filter: blur(2px);          /* aplica o desfoque */
+    border-radius: 40px;                  /* cantos arredondados */
+    border: 1px solid rgba(255, 255, 255, 0.068); /* borda suave */
+    padding: 20px;
+    margin: 0 auto;              /* centra */
+    max-width: clamp(320px, 60vw, 900px); /* limita largura em telas grandes */
+    
+}
+
+h1:hover {
+    background: rgba(255, 255, 255, 0.25); /* aumenta a opacidade ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* adiciona uma sombra suave */
+    /* não altere margens no hover para evitar saltos de layout */
+}
+
+section {
+    padding: 20px;
+    background: transparent;
+}       
+
+main {
+    flex: 1 0 auto; /* ocupa o espaço disponível */
+}
+
+
 
 p {
-    margin: 30px 60px 30px 60px;
-    padding: 5px 0;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--color5);
+    font-size: 18px;
+    line-height: 1.6;
+    color: #0e0909;
     text-align: center;
-    text-transform: uppercase;
 }
 
-/* Estilos para seções */
 h2 {
-    font-family: "Cormorant Garamond", serif;
-    color: var(--color4);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    font-weight: 600;
-    border-bottom: 2px solid #ce5e13;
-    padding-bottom: 5px;
-    font-style: normal;
-    font-size: 30px;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    padding: 10px 0;
-    background-color: var(--color2);
-    box-shadow: #fa8331 0px 4px 6px -1px, #fa8331 0px 2px 4px -1px;
-    border-radius: 12px;
-    margin-left: 30%;
-    margin-right: 30%;
+    color: #0e0909;
     text-align: center;
-}
-
-/* Cores específicas para cada seção usando a nova paleta */
-#mission h2 {
-    color: var(--color3);
-}
-
-#upcoming-events {
-    color: var(--color4);
-    background-color: var(--color2);
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    border-left: 4px solid var(--color3);
-}
-
-#contact h2 {
-    color: var(--color5);
-}
-
-/* Estilos para listas */
-ul {
-    padding-left: 30px;
-}
-
-li {
-    font-size: 20px;
-    margin-bottom: 8px;
-    padding: 2px;
-    border-radius: 3px;
-    transition: background-color 0.3s ease;
-    margin-left: 10%;
-    margin-right: 40%;
-}
-
-li:hover {
-    background-color: rgba(191, 228, 205, 0.3);
-}
-
-/* Eventos ao ar livre */
-.outdoor {
-    background-color: var(--color1);
-    padding: 5px;
-    border: 1px solid var(--color3);
-    margin: 4px 0;
-    margin-left: 10%;
-    margin-right: 40%;
-    border-radius: 3px;
-    box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.253);
-    color: #fb4848;
-}
-
-/* Seção de contato */
-.section {
-    background-color: var(--color2);
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 15px;
-    border: 1px solid var(--color4);
-    border-left: 4px solid var(--color5);
-}
-
-/* Estilos para spans com datas */
-span[style*="font-weight: bold"] {
-    display: inline-block;
-    padding: 2px 6px;
-    border-radius: 3px;
-    background-color: rgba(253, 10, 96, 0.1);
-    color: var(--color4);
-}
-
-/* Efeitos hover para elementos interativos */
-span[title] {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-span[title]:hover {
-    background-color: rgba(250, 131, 49, 0.2);
-    padding: 2px 4px;
-    border-radius: 3px;
-}
-
-/* Separador visual */
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #fa8331, transparent);
-    margin: 40px 0;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
+    font-size: 28px;
+    margin-bottom: 5px;
     
-    h1 {
-        font-size: 24px;
-        padding: 10px;
-    }
-    
-    #upcoming-events, .section {
-        padding: 10px;
-    }
 }
-
 
 .eventos {
-    align-items: center;
-    background-color: #ddb37d;
-    padding: 15px 20px;
-    margin: 0 auto;
-    max-width: 600px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    border-left: 4px solid var(--color3);
-    box-shadow: -10px 10px 10px rgba(92, 45, 1, 0.979);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: #fff;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: 3px 3px 2px 2px rgb(0, 0, 0);
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #0e0909;
+    margin-left: 10%;
+    margin-right: 20%;
+    
+}
+
+.outdoor {
+    background-color: #4cdb7c;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 20%;
+    border-radius: 10px;
+}
+
+span {
+    font-weight: bold;
+    color: #c40909;
+    font-size: 20px;
+}
+
+.contact {
+    flex-shrink: 0; /* não encolhe */
+    margin-top: 100px; /* distância maior do conteúdo acima */
+    padding: 2px 0px;
+    height: 160px;
+    background: rgba(21, 123, 206, 0.9);
+    color: #fff;
+    text-align: center;
+    border-top: 3px solid rgba(0,0,0,0.3);
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+   
+}
+
+.contact h2, .contact p {
+    color: #ffffff;
+}
+.contact span {
+    color: #c2bf24;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+footer {
+    flex-shrink: 0; /* não encolhe */
+    background: rgba(6, 99, 175, 0.932); /* integra com a seção de contato */
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding: 2px 0px;
+    color: #ffffff;
+    font-size: 18px;
 }
