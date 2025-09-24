@@ -2,24 +2,41 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Sunnydale School</title>
+    <title>Sunnydale School - Excelência em Educação</title>
+    <link rel="stylesheet" href="escola.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+</style>
 </head>
 <body>
-    <h1 >Sunnydale School</h1>
-    <p>Welcome to Sunnydale School, dedicated to fostering a love of learning in every student.</p>
+    <header>
+        <h1>Sunnydale School</h1>
+    </header>
+    <main>
+    <p>Bem-vindos à Sunnydale School, dedicada a cultivar o amor pelo aprendizado em cada estudante.</p>
     
-    <h2>Mission Statement</h2>
-    <p>Our mission is to provide a quality education that prepares all children for a successful future.</p>
+    <div id="mission">
+        <h2>Declaração de Missão</h2>
+        <p>Nossa missão é fornecer uma educação de qualidade que prepare todas as crianças para um futuro de sucesso.</p>
+    </div>
     
-    <h2>Upcoming Events</h2>
-    <ul>
-        <li>Science Fair - June 10</li>
-        <li>Art Exhibition - June 15</li>
-        <li>Sports Day - June 20</li>
-    </ul>
+    <div class="eventos">
+        <h2 id="upcoming-events">Próximos Eventos</h2>
+        <ul>
+            <li data-event-type="indoor" title="Event Type: Indoor">Feira de Ciências - <span style="font-weight: bold;">10 de Junho</span></li>
+            <li data-event-type="outdoor" title="Event Type: Outdoor" class="outdoor">Exposição de Arte - <span style="font-weight: bold;">15 de Junho</span></li>
+            <li data-event-type="outdoor" title="Event Type: Outdoor" class="outdoor">Dia dos Esportes - <span style="font-weight: bold;">20 de Junho</span></li>
+        </ul>
+    </div>
     
-    <h2>Contact Us</h2>
-    <p>Email: info@sunnydaleschool.com</p>
-    <p>Phone: 555-1234</p>
+    <div id="contact">
+        <h2>Fale Conosco</h2>
+        <div class="section">
+            <p>Email: <span title="Clique para copiar o e-mail">info@sunnydaleschool.com</span></p>
+            <p>Telefone: <span title="Clique para copiar o telefone">555-1234</span></p>
+            <!-- Imagine clicar aqui e ver uma mensagem: 'Obrigado por entrar em contato!' -->
+        </div>
+    </div>
+    </main>
 </body>
 </html>
