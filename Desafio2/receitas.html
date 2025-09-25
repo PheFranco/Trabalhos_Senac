@@ -32,7 +32,11 @@
                     Aqui você encontra uma seleção de receitas simples e aconchegantes – doces e salgadas –
                     inspiradas em momentos calmos como os de um filme do Studio Ghibli.
                 </p>
-                <img src="receitas/gi.gif" alt="Animação temática acolhedora" class="gif-intro">
+                <div class="video-wrap">
+                    <video class="video-estudio" autoplay loop muted playsinline aria-label="Vídeo de ambiente" tabindex="-1">
+                        <source src="estudio.mp4" type="video/mp4">
+                    </video>
+                </div>
                 <p>
                     Respire, separe os ingredientes, coloque uma música suave e aproveite o processo.
                     Cozinhar também é uma forma de desacelerar.
@@ -69,5 +73,29 @@
    <footer>
     <p>&copy; 2024 Phelipe Franco. Todos os direitos reservados.</p>
    </footer>
+        <script>
+            // Exibir controles quando o usuário interagir com o vídeo (hover/focus) e ocultar quando sair
+            (function(){
+                const wrap = document.querySelector('.video-wrap');
+                const video = document.querySelector('.video-estudio');
+                if (!wrap || !video) return;
+
+                function showControls() { video.setAttribute('controls', ''); }
+                function hideControls() { video.removeAttribute('controls'); }
+
+                // Não mostrar controles no hover; apenas em foco por teclado ou clique/touch
+                wrap.addEventListener('focusin', showControls);
+                wrap.addEventListener('focusout', hideControls);
+
+                // Para toque em mobile: ao tocar uma vez adiciona controles e pausa o autoplay
+                wrap.addEventListener('click', function(){
+                    if (!video.hasAttribute('controls')) {
+                        showControls();
+                        // em mobile, permitir que o usuário decida: pausar para evitar reprodução inesperada
+                        try { video.pause(); video.currentTime = 0; } catch(e){}
+                    }
+                });
+            })();
+        </script>
 </body>
 </html>
