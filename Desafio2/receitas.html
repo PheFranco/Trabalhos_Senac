@@ -10,136 +10,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Macondo&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="menu-barra" style="justify-content: flex-start;">
-            <img src="" alt="Cute" class="cute-img">
-            <div style="flex: 1;">
-                    <nav id="menu" class="navegacao">
-                        <a href="#inicio">Início</a> |
-                        <a href="#receitas-doces">Receitas Doces</a> |
-                        <a href="#receitas-salgadas">Receitas Salgadas</a> |
-                        <a href="#contato">Contato</a>
-                    </nav>
-                </div>
-            </div>
+    <header class="site-header">
+        <div class="menu-barra">
+            <nav id="menu" class="navegacao" aria-label="Navegação principal">
+                <a href="#inicio">Início</a>
+                <a href="#receitas">Receitas</a>
+                <a href="#contato">Contato</a>
+            </nav>
         </div>
-    </div>
-    <div class="capa">
-    </div>
+        <div class="capa" role="img" aria-label="Imagem de capa temática"></div>
     </header>
     
     <main>
         <div class="container">
-                    <h1>Receitas Da Saori </h1>
-                    <h2>Bem-vindo </h2>
-         <div id="inicio" style="background-color: rgb(245, 227, 179);" class="inicio">
-        <h2>Início</h2>
-        <p>Bem-vindo ao nosso site de receitas! Aqui você encontrará uma variedade de receitas deliciosas, tanto doces quanto salgadas, para todas as ocasiões.
-            <br> Explore nossas categorias e descubra pratos incríveis para preparar em casa.
-            <br> Bom apetite!</p>
-        <img src="receitas/gi.gif" alt="">
-        <p>A seguir teremos receitas doces e salgadas
-            <br> escolha a sua favorita e mãos à obra!
-            <br> não esqueça de nos seguir nas redes sociais para mais dicas e receitas exclusivas!
-            <br> Bom apetite!
-        </p>
-    </div>
+            <h1 class="titulo-site">Receitas da Saori</h1>
+            <p class="subtitulo">Um cantinho acolhedor para cozinhar com calma e carinho.</p>
 
-    <section id="receitas-doces" class="container">
-        <h2 class="title">Receitas Doces</h2>
-        <div class="receita-esquerda">
-            <h2>Mussyr</h2>
-            <img src="receitas/mussyr.png" alt="">
-            <p>receita de musse de chocolate
-                <br>1 lata de leite condensado
-                <br>1 lata de creme de leite
-                <br>4 colheres de sopa de chocolate em pó
-                <br>1 envelope de gelatina em pó sem sabor
-                <br>5 colheres de sopa de água
-                <br>Modo de Preparo:
-            <ol>
-                <li>Bata no liquidificador o leite condensado, o creme de leite e o chocolate em pó</li>
-                <li>Hidrate a gelatina na água e leve ao micro-ondas por 15 segundos</li>
-                <li>Adicione a gelatina ao liquidificador e bata por mais 2 minutos</li>
-                <li>Despeje em taças e leve à geladeira por pelo menos 2 horas antes de servir.</li>
-            </ol>
-            </p>
-        </div>
-        <div class="receita-direita">
-            <h2>Bolo de chocolate branco </h2>
-            <img src="receitas/chocob.png" alt="">
-            <p> receita de bolo de chocolate branco
-                <br> Ingredientes:
-                <br> 200g de chocolate branco
-                <br> 1/2 xícara de açúcar
-                <br> 1/2 xícara de manteiga
-                <br> 2 ovos
-                <br> 1 xícara de farinha de trigo
-                <br> 1 colher de sopa de fermento em pó
-                <br> Modo de Preparo:
-            <ol>
-                <li>Preaqueça o forno a 180°C.</li>
-                <li>Derreta o chocolate branco e a manteiga em banho-maria.</li>
-                <li>Em uma tigela, misture o açúcar, os ovos e a mistura de chocolate.</li>
-                <li>Adicione a farinha e o fermento, misturando até ficar homogêneo.</li>
-                <li>Despeje em uma forma untada e leve ao forno por 30 minutos.</li>
-            </ol>
-            </p>
-        </div>
-    </section>
+            <section id="inicio" class="inicio" aria-labelledby="intro-heading">
+                <h2 id="intro-heading">Bem-vindo</h2>
+                <p>
+                    Aqui você encontra uma seleção de receitas simples e aconchegantes – doces e salgadas –
+                    inspiradas em momentos calmos como os de um filme do Studio Ghibli.
+                </p>
+                <img src="receitas/gi.gif" alt="Animação temática acolhedora" class="gif-intro">
+                <p>
+                    Respire, separe os ingredientes, coloque uma música suave e aproveite o processo.
+                    Cozinhar também é uma forma de desacelerar.
+                </p>
+            </section>
 
-    <section id="receitas-salgadas" class="container">
-        <h2 class="title">Receitas Salgadas</h2>
-        <div class="receita-esquerda">
-            <h2>Canolli Salgado</h2>
-            <img src="receitas/canolli.png" alt="">
-            <p>receita de canolli
-                <br> Ingredientes:
-                <br> - 1 pacote de massa para canolli
-                <br> - 500g de ricota
-                <br> - 200g de açúcar
-                <br> - 1 colher de chá de essência de baunilha
-                <br> - Óleo para fritar
-                <br> Modo de Preparo:
-            <ol>
-                <li>Em uma tigela, misture a ricota, o açúcar e a essência de baunilha até obter uma massa homogênea.</li>
-                <li>Recheie as massas para canolli com a mistura de ricota.</li>
-                <li>Frite em óleo quente até dourar.</li>
-                <li>Escorra em papel absorvente e sirva.</li>
-            </ol>
-            </p>
+            <section id="receitas" class="receitas" aria-labelledby="receitas-heading">
+                <h2 id="receitas-heading">Receitas</h2>
+                <div class="recipes-grid">
+                    <figure class="recipe-card">
+                        <img src="receita1.jpg" alt="Tigela de ramen simples e reconfortante" loading="lazy">
+                        <figcaption>Lamen simples aconchegante</figcaption>
+                    </figure>
+                    <figure class="recipe-card">
+                        <img src="receita2.jpg" alt="Prato rústico caseiro" loading="lazy">
+                        <figcaption>Prato caseiro rústico</figcaption>
+                    </figure>
+                    <figure class="recipe-card">
+                        <img src="receita3.jpg" alt="Doce artesanal" loading="lazy">
+                        <figcaption>Doce artesanal suave</figcaption>
+                    </figure>
+                </div>
+            </section>
         </div>
-        <div class="receita-direita">
-            <h2>Frango Assado</h2>
-            <img src="receitas/frango.png" alt="">
-            <p>receita de frango assado
-                <br> Ingredientes:
-                <br> - 1 frango inteiro
-                <br> - 4 dentes de alho
-                <br> - 1 limão
-                <br> - 1 colher de sopa de sal
-                <br> - 1 colher de sopa de pimenta-do-reino
-                <br> - 2 colheres de sopa de azeite
-                <br> Modo de Preparo:
-            <ol>
-                <li>Preaqueça o forno a 180°C.</li>
-                <li>Em um recipiente, misture o alho picado, o suco de limão, o sal, a pimenta e o azeite.</li>
-                <li>Esfregue essa mistura no frango, garantindo que fique bem temperado.</li>
-                <li>Coloque o frango em uma assadeira e leve ao forno por aproximadamente 1 hora, ou até que esteja dourado e cozido por dentro.</li>
-                <li>Deixe descansar por alguns minutos antes de servir.</li>
-            </ol>
-            </p>
-        </div>
-    </section>
 
     <!-- Espaço extra antes do rodapé de contato -->
     <div style="height: 60px;"></div>
 
-    <div id="contato" class="contato">
-        <h2>Contato</h2>
-        <p>Email:</p>
-    </div>
+    <section id="contato" class="contato" aria-labelledby="contato-heading">
+        <h2 id="contato-heading">Contato</h2>
+        <p>Envie uma mensagem para <a href="mailto:contato@saorireceitas.com" class="link-contato">contato@saorireceitas.com</a></p>
+    </section>
     </main>
-   
+   <footer>
+    <p>&copy; 2024 Phelipe Franco. Todos os direitos reservados.</p>
+   </footer>
 </body>
 </html>
